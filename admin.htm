@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqer Admin Login</title>
+    <style>
+        @font-face {
+            font-family: 'Trebuchet';
+            src: url('trebuchet.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Trebuchet', Arial, sans-serif;
+            background-color: #111;
+            color: #00FF00;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00FF00;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="text"].captcha-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #000;
+            color: #00FF00;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #00FF00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <form id="login-form" onsubmit="return validateForm()">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="captcha" id="captcha-label"></label>
+                <input type="text" id="captcha" class="captcha-input" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomAdditionSymbol() {
+            const symbols = ["(plus)", "plus", "+", "PlUs", "added to", "十", "\u207A"];
+            return symbols[getRandomInt(0, symbols.length - 1)];
+        }
+
+        function generateCaptcha() {
+            const num1 = getRandomInt(1, 9);
+            const num2 = getRandomInt(1, 9);
+            const num3 = getRandomInt(1, 9);
+            const symbol1 = getRandomAdditionSymbol();
+            const symbol2 = getRandomAdditionSymbol();
+            const captchaLabel = document.getElementById('captcha-label');
+            captchaLabel.textContent = `What is ${num1} ${symbol1} ${num2} ${symbol2} ${num3}?`;
+            return num1 + num2 + num3;
+        }
+
+        const correctCaptcha = generateCaptcha();
+
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const captcha = parseInt(document.getElementById('captcha').value);
+
+            if (username === 'aqer' && password === 'aqeriskool2' && captcha === correctCaptcha) {
+                window.location.href = 'admin_dashboard.txt';
+                return false; // Prevent form submission
+            } else {
+                alert('Incorrect username, password, or captcha.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

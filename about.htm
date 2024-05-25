@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aqer</title>
+    <style>
+        @font-face {
+            font-family: 'Trebuchet';
+            src: url('trebuchet.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'Trebuchet', Arial, sans-serif;
+            background-color: #111;
+            color: #00FF00;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #000;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin: 0;
+            color: #00FF00;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #333;
+            color: #00FF00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #444;
+        }
+
+        #content {
+            margin: 20px;
+            flex: 1;
+        }
+
+        .paragraph {
+            margin: 20px 0;
+            background-color: #222;
+            padding: 10px;
+            border-left: 5px solid #00FF00;
+            color: #DDD;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Aqer Logo" id="logo">
+        <div>
+            <h1>Aqer</h1>
+            <p>Your Darknet Programming Hub</p>
+        </div>
+    </header>
+    <nav>
+        <a href="index.htm" class="btn">Home</a>
+        <a href="about.htm" class="btn">About</a>
+        <a href="shop.htm" class="btn">Services</a>
+        <a href="admin.htm" class="btn">Admin</a>
+    </nav>
+    <section id="content">
+        <h2>About Aqer</h2>
+        <p class="paragraph">
+            Aqer is a place to learn about programming, electronics, and ethical hacking. Whether you're just starting out or looking to expand your knowledge, you'll find helpful resources and a community of like-minded individuals!
+        </p>
+        <p class="paragraph">
+            Our goal is to provide a space where you can explore different technologies, work on projects, and improve your skills. From tutorials and guides to forums and project ideas, Aqer has something for everyone!
+        </p>
+        <p class="paragraph">
+            Security and ethical hacking are also key topics here. We offer information on how to conduct penetration testing, assess vulnerabilities, and practice secure coding to help you protect systems and data!
+        </p>
+        <p class="paragraph">
+            Research our Products!!!
+        </p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Aqer. All rights reserved.</p>
+    </footer>
+</body>
+</html>
